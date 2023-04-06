@@ -132,7 +132,7 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
           Align(
-            alignment: Alignment.topCenter,
+            alignment: Alignment.center,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -333,7 +333,7 @@ class _HomeViewState extends State<HomeView> {
 
     // 결과를 순회하면서 score가 0.5보다 높고 labelColorMap에 해당 라벨이 등록되어 있는 경우에만 detectedObjects에 추가
     for (Recognition result in results) {
-      if (result.score > 0.6 && labelColorMap.containsKey(result.label)) {
+      if (result.score > 0.3 && labelColorMap.containsKey(result.label)) {
         detectedObjects[result.label] = result;
         if (result.label == "car" || result.label == "bus" ||
             result.label == "person" || result.label == "keyboard" ||
@@ -341,6 +341,7 @@ class _HomeViewState extends State<HomeView> {
         ) {
           //진동을 주는 라이브러리 duration: 1000(진동이 발생할 시간 기본값은 500ms),
           //amplitude: 255(진동 세기 기본값 -1 최대 255)
+          print(result.label);
           Vibration.vibrate();
         }
       }

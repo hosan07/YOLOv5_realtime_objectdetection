@@ -48,8 +48,8 @@ class MyApp extends StatelessWidget {
       ),
       //home: HomeView(),
       //home: HomePage(),
-      //home: MainNavigationScreen(),
-      home: LoginScreen(),
+      home: MainNavigationScreen(),
+      //home: LoginScreen(),
     );
   }
 }
