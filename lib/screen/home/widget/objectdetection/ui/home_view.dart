@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
-import '../../home/widget/diary/diary_screen.dart';
-import '../../home/widget/map/db/dbhelper.dart';
-import '../../home/widget/map/pages/maps.dart';
+import '../../diary/diary_screen.dart';
+import '../../map/db/dbhelper.dart';
 import '../tflite/recognition.dart';
 import '../tflite/stats.dart';
 import 'box_widget.dart';
@@ -27,13 +26,10 @@ class _HomeViewState extends State<HomeView> {
   /// Realtime stats
   Stats stats;
 
-  /// Scaffold Key
-  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
       backgroundColor: Colors.black,
       body: Stack(
         children: <Widget>[
@@ -64,75 +60,106 @@ class _HomeViewState extends State<HomeView> {
               // ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 100),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: () async {
-                          Entry newEntry = await Navigator.push(
-                              context, MaterialPageRoute(builder: (context) => MapPage()));
-                          if (newEntry != null) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => DiaryScreen())).then((value) => _fetchEntries());
-                          }
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
-                          primary: Colors.white.withOpacity(0.1),
-                        ),
-                        child: Text(
-                          '주행 시작',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 30,),
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => DiaryScreen()),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
-                          primary: Colors.white.withOpacity(0.1),
-                        ),
-                        child: Text(
-                          '주행 기록',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
+          // Align(
+          //   alignment: Alignment.bottomRight,
+          //   child: Padding(
+          //     padding: EdgeInsets.all(50),
+          //     child: Expanded(
+          //       child: ElevatedButton(
+          //         onPressed: () {
+          //           Navigator.push(
+          //             context,
+          //             MaterialPageRoute(builder: (context) => DiaryScreen()),
+          //           );
+          //         },
+          //         style: ElevatedButton.styleFrom(
+          //           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          //           shape: RoundedRectangleBorder(
+          //             borderRadius: BorderRadius.circular(25.0),
+          //           ),
+          //           primary: Colors.white.withOpacity(0.1),
+          //         ),
+          //         child: Text(
+          //           '주행 기록',
+          //           style: TextStyle(
+          //             color: Colors.white,
+          //             fontSize: 18,
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          //주행시작, 주행기록 버튼
+          // Padding(
+          //   padding: EdgeInsets.symmetric(horizontal: 20),
+          //   child: Align(
+          //     alignment: Alignment.bottomCenter,
+          //     child: Padding(
+          //       padding: const EdgeInsets.fromLTRB(0, 0, 0, 100),
+          //       child: Row(
+          //         mainAxisAlignment: MainAxisAlignment.center,
+          //         children: [
+          //           Expanded(
+          //             child: ElevatedButton(
+          //               onPressed: () async {
+          //                 Entry newEntry = await Navigator.push(
+          //                     context, MaterialPageRoute(builder: (context) => MapPage()));
+          //                 if (newEntry != null) {
+          //                   Navigator.push(
+          //                       context,
+          //                       MaterialPageRoute(builder: (context) => DiaryScreen())).then((value) => _fetchEntries());
+          //                 }
+          //               },
+          //               style: ElevatedButton.styleFrom(
+          //                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          //                 shape: RoundedRectangleBorder(
+          //                   borderRadius: BorderRadius.circular(25.0),
+          //                 ),
+          //                 primary: Colors.white.withOpacity(0.1),
+          //               ),
+          //               child: Text(
+          //                 '주행 시작',
+          //                 style: TextStyle(
+          //                   color: Colors.white,
+          //                   fontSize: 18,
+          //                 ),
+          //               ),
+          //             ),
+          //           ),
+          //           SizedBox(width: 30,),
+          //           Expanded(
+          //             child: ElevatedButton(
+          //               onPressed: () {
+          //                 Navigator.push(
+          //                   context,
+          //                   MaterialPageRoute(builder: (context) => DiaryScreen()),
+          //                 );
+          //               },
+          //               style: ElevatedButton.styleFrom(
+          //                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          //                 shape: RoundedRectangleBorder(
+          //                   borderRadius: BorderRadius.circular(25.0),
+          //                 ),
+          //                 primary: Colors.white.withOpacity(0.1),
+          //               ),
+          //               child: Text(
+          //                 '주행 기록',
+          //                 style: TextStyle(
+          //                   color: Colors.white,
+          //                   fontSize: 18,
+          //
+          //                 ),
+          //               ),
+          //             ),
+          //           ),
+          //         ],
+          //       ),
+          //     ),
+          //   ),
+          // ),
           Align(
-            alignment: Alignment.center,
+            alignment: Alignment.topCenter,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [

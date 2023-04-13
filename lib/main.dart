@@ -6,7 +6,6 @@ import 'package:objectdetection/bottomnavigation/main_naviagation_screen.dart';
 import 'package:objectdetection/screen/home/widget/diary/diary_screen.dart';
 import 'package:objectdetection/screen/home/widget/map/pages/maps.dart';
 import 'package:objectdetection/screen/login/login_screen.dart';
-import 'package:objectdetection/screen/objectdetection/ui/home_view.dart';
 
 import 'constants/sizes.dart';
 void main() async {
@@ -29,7 +28,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         //backgroundColor: Color(0xfff5f5f5),
         canvasColor: Colors.transparent,
-        scaffoldBackgroundColor: Color(0xfff5f5f5),
+        //scaffoldBackgroundColor: Color(0xfff5f5f5),
+        scaffoldBackgroundColor: Color(0xFFffffff),
         primaryColor: Color(0xFFffffff),
         textSelectionTheme: const TextSelectionThemeData(
           cursorColor: Color(0xFFE9435A),
@@ -48,8 +48,8 @@ class MyApp extends StatelessWidget {
       ),
       //home: HomeView(),
       //home: HomePage(),
-      home: MainNavigationScreen(),
-      //home: LoginScreen(),
+      //home: MainNavigationScreen(),
+      home: LoginScreen(),
     );
   }
 }

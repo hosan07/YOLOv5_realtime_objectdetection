@@ -12,7 +12,6 @@ class NavTab extends StatelessWidget {
     this.selectedIndex,
     this.text,
   });
-
   //final String text;
   final bool isSelected;
   final IconData icon;
@@ -20,6 +19,7 @@ class NavTab extends StatelessWidget {
   final Function() onTap;
   final int selectedIndex;
   final String text;
+
 
   @override
   Widget build(BuildContext context) {

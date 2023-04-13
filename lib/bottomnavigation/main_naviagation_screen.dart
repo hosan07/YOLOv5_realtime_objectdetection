@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:objectdetection/screen/objectdetection/ui/camera_view.dart';
 import '../constants/sizes.dart';
-import '../screen/home/widget/diary/diary_screen.dart';
 import '../screen/home/home_screen.dart';
-import '../screen/home/widget/map/pages/maps.dart';
-import '../screen/objectdetection/ui/home_view.dart';
+import '../screen/home/widget/weather/geolocator.dart';
+import '../screen/user/user_screen.dart';
 import 'widgets/nav_tab.dart';
 
 class MainNavigationScreen extends StatefulWidget {
@@ -20,7 +18,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.yellow,
+        backgroundColor: Colors.white,
         extendBody: true, // Important: to remove background of bottom navigation (making the bar transparent doesn't help)
         bottomNavigationBar: Container(
           decoration: const BoxDecoration(
@@ -28,7 +26,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               topLeft: Radius.circular(20.0), // adjust to your liking
               topRight: Radius.circular(20.0), // adjust to your liking
             ),
-            color: Colors.transparent, // put the color here
+            color: Colors.white, // put the color here
           ),
         child: BottomAppBar(
           elevation: 0,
@@ -72,8 +70,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 NavTab(
                   //text: 'Profile',
                   isSelected: _selectedIndex == 3,
-                  icon: FontAwesomeIcons.message,
-                  selectedIcon: FontAwesomeIcons.solidMessage,
+                  icon: FontAwesomeIcons.user,
+                  selectedIcon: FontAwesomeIcons.solidUser,
                   onTap: () => _onTapBottomNavigationItem(3),
                   selectedIndex: _selectedIndex,
                 ),
@@ -87,7 +85,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         children: [
           Offstage(
             offstage: _selectedIndex != 0,
-            child: HomeView(),
+            //child: HomeView(),
+            child: HomeScreen(),
           ),
           Offstage(
             offstage: _selectedIndex != 1,
@@ -101,7 +100,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           ),
           Offstage(
             offstage: _selectedIndex != 3,
-            child: DiaryScreen(),
+            child: UserScreen(),
           ),
         ],
       ),
