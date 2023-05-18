@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
 import '../../diary/diary_screen.dart';
-import '../../map/db/dbhelper.dart';
 import '../tflite/recognition.dart';
 import '../tflite/stats.dart';
 import 'box_widget.dart';
@@ -17,9 +16,9 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  Future<void> _fetchEntries() async{
-    List<Entry> entries = (await DBHelper.getEntries()).cast<Entry>();
-  }
+  // Future<void> _fetchEntries() async{
+  //   List<Entry> entries = (await DBHelper.getEntries()).cast<Entry>();
+  // }
   /// Results to draw bounding boxes
   List<Recognition> results;
 
@@ -168,15 +167,15 @@ class _HomeViewState extends State<HomeView> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      StatsRow('Inference time:',
-                          '${stats.inferenceTime} ms'),
-                      StatsRow('Total prediction time:',
-                          '${stats.totalElapsedTime} ms'),
-                      StatsRow('Pre-processing time:',
-                          '${stats.preProcessingTime} ms'),
-                      StatsRow('Frame',
-                          '${CameraViewSingleton.inputImageSize?.width} X ${CameraViewSingleton.inputImageSize?.height}'),
-                    ],
+                    StatsRow('Inference time:',
+                        '${stats.inferenceTime} ms'),
+                    StatsRow('Total prediction time:',
+                        '${stats.totalElapsedTime} ms'),
+                    StatsRow('Pre-processing time:',
+                        '${stats.preProcessingTime} ms'),
+                    StatsRow('Frame',
+                        '${CameraViewSingleton.inputImageSize?.width} X ${CameraViewSingleton.inputImageSize?.height}'),
+                  ],
                   ),
                 )
                     : Container()

@@ -4,39 +4,10 @@ import 'package:objectdetection/screen/home/widget/map/model/entry.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 class EntryCard extends StatelessWidget {
   final Entry entry;
-  final Function(int) onDelete;
+  final void Function(Entry) onDelete;
   EntryCard({this.entry, this.onDelete});
-  // 데이터 저장 함수
-  Future<void> saveDataToFirestore({
-    double speed,
-    String time,
-    double distance,
-    DateTime date,
-  }) async {
-    // Firestore 인스턴스 생성
-    final FirebaseFirestore firestore = FirebaseFirestore.instance;
-
-    try {
-      // 데이터 저장
-      await firestore.collection('entries').add({
-        'speed': speed,
-        'time': time,
-        'distance': distance,
-        'date': date,
-      });
-      print(speed);
-      print('안녕');
-    } catch (e) {
-
-      print('Error saving data to Firestore: $e');
-    }
-  }
-
-
-
   @override
   Widget build(BuildContext context) {
-    print(entry.duration);
     return Card(
       margin: EdgeInsets.all(10),
       child: Container(
@@ -69,7 +40,7 @@ class EntryCard extends StatelessWidget {
                           TextButton(
                             onPressed: () {
                               Navigator.of(context).pop();
-                              onDelete(entry.id);
+                              onDelete(entry);
                             },
                             child: Text("예"),
                           ),
@@ -78,17 +49,6 @@ class EntryCard extends StatelessWidget {
                     );
                   },
                   icon: Icon(Icons.delete),
-                ),
-                IconButton(
-                  onPressed: () async {
-                    await saveDataToFirestore(
-                      speed: entry.distance / 1000,
-                      time: entry.duration,
-                      distance: entry.distance,
-                      date: DateTime.parse(entry.date),
-                    );
-                  },
-                  icon: Icon(Icons.save),
                 ),
               ],
             ),

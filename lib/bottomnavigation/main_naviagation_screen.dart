@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:objectdetection/screen/home/widget/diary/diary_screen.dart';
+import 'package:objectdetection/screen/home/widget/map/map_screen.dart';
 import '../constants/sizes.dart';
+import '../lib2/ui/home_view.dart';
+import '../lib5/choosedemostate.dart';
 import '../screen/home/home_screen.dart';
+// import '../screen/home/widget/map/db/dbhelper.dart';
+// import '../screen/home/widget/map/model/entry.dart';
+import '../screen/home/widget/map/pages/maps.dart';
+import '../screen/home/widget/objectdetection/ui/homeview2.dart';
 import '../screen/home/widget/weather/geolocator.dart';
 import '../screen/user/user_screen.dart';
+import '../screen/user/user_screen2.dart';
 import 'widgets/nav_tab.dart';
 
 class MainNavigationScreen extends StatefulWidget {
@@ -13,6 +22,10 @@ class MainNavigationScreen extends StatefulWidget {
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _selectedIndex = 0;
+  // Future<void> _fetchEntries() async{
+  //   List<Entry> entries = (await DBHelper.getEntries()).cast<Entry>();
+  // }
+
 
   @override
   Widget build(BuildContext context) {
@@ -59,20 +72,20 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                     isInverted: _selectedIndex != 0,
                   ),*/
                 //Gaps.h24,
-                NavTab(
-                  //text: 'Like',
-                  isSelected: _selectedIndex == 2,
-                  icon: Icons.favorite_border_outlined,
-                  selectedIcon: Icons.favorite,
-                  onTap: () => _onTapBottomNavigationItem(2),
-                  selectedIndex: _selectedIndex,
-                ),
+                // NavTab(
+                //   //text: 'Like',
+                //   isSelected: _selectedIndex == 2,
+                //   icon: Icons.favorite_border_outlined,
+                //   selectedIcon: Icons.favorite,
+                //   onTap: () => _onTapBottomNavigationItem(2),
+                //   selectedIndex: _selectedIndex,
+                // ),
                 NavTab(
                   //text: 'Profile',
-                  isSelected: _selectedIndex == 3,
+                  isSelected: _selectedIndex == 2,
                   icon: FontAwesomeIcons.user,
                   selectedIcon: FontAwesomeIcons.solidUser,
-                  onTap: () => _onTapBottomNavigationItem(3),
+                  onTap: () => _onTapBottomNavigationItem(2),
                   selectedIndex: _selectedIndex,
                 ),
 
@@ -88,25 +101,36 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             //child: HomeView(),
             child: HomeScreen(),
           ),
+          // Offstage(
+          //   offstage: _selectedIndex != 1,
+          //   //child: HomeView(),
+          //   child: ChooseDemo(),
+          //   //child: MapScreen(),
+          // ),
           Offstage(
             offstage: _selectedIndex != 1,
-            //child: HomeView(),
-            child: HomeScreen(),
-            //child: MapScreen(),
+            //child: HomeView2(),
+            child: MapView(),
           ),
           Offstage(
             offstage: _selectedIndex != 2,
-            child: HomeScreen(),
-          ),
-          Offstage(
-            offstage: _selectedIndex != 3,
-            child: UserScreen(),
+            child: UserScreen2(),
           ),
         ],
       ),
+      floatingActionButtonLocation: _selectedIndex == 0 ? FloatingActionButtonLocation.endFloat : null,
+      floatingActionButton: _selectedIndex == 0 ? FloatingActionButton(
+        heroTag: 'uniqueTag',
+        onPressed: () async {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => MapPage()));
+        },
+        child: Text("주행 시작",style: TextStyle(color: Colors.black,fontSize: 10, fontWeight: FontWeight.bold),),
+        backgroundColor: Colors.grey[350],
+        elevation: 8,
+      ) : null,
     );
   }
-
   void _onTapBottomNavigationItem(int index) {
     setState(() {
       _selectedIndex = index;
