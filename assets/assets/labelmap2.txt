@@ -1,0 +1,15 @@
+car
+Front bumper
+Rear bumper
+Wheel
+A Pillar
+C Pillar
+Side mirror
+Front door
+Back door
+Radiator grill
+Head lamp
+Rear lamp
+Bonnet
+Trunk
+Roof
