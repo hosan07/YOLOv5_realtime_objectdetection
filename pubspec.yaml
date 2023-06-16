@@ -41,9 +41,13 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   cupertino_icons: ^1.0.2
+
+  #camera: ^0.9.8+1
   camera: ^0.9.4+5
+  #camera: ^0.8.1+3
   tflite_flutter: ^0.9.0
-  tflite_flutter_helper: ^0.3.1
+  #tflite_flutter_helper: ^0.3.1
+  tflite_flutter_helper: ^0.3.0
   image: ^3.0.2
   path_provider: ^2.0.14
   image_picker: ^0.8.7
@@ -72,6 +76,9 @@ dev_dependencies:
   pigeon: ^4.2.0
   #ffi: ^2.0.1
   sliding_up_panel: ^2.0.0+1
+  camera_avfoundation: ^0.9.13+2
+  hooks_riverpod: ^1.0.0
+  simple_logger: ^1.8.1+1
 
 
 
@@ -101,18 +108,10 @@ flutter:
   #  - assets/labelmap.txt
   #  - assets/yolov5.tflite
   #  - assets/labelmap2.txt
-    - assets/assets/detect.tflite
-    - assets/assets/labelmap.txt
-    - assets/yolov2_tiny.tflite
-    - assets/yolov2_tiny.txt
-    - assets/assets/yolov2_tiny.tflite
-    - assets/assets/yolov2_tiny.txt
-    - assets/assets/yolov5.tflite
-    - assets/assets/labelmap2.txt
-    - assets/assets/tinyfood12-1.tflite
-    - assets/assets/food2.txt
+    - assets/
     - assets/models/
     - assets/labels/
+    - assets/assets/
     - images/
     - images/bus.png
     - images/car.png

@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:objectdetection/screen/user/widget/edit_screen.dart';
+import 'package:objectdetection/screen/user/widget/setting_screen.dart';
 import '../../constants/gaps.dart';
 import '../../constants/padding.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:objectdetection/screen/home/widget/map/model/entry.dart';
 import '../home/widget/diary/diary_screen.dart';
-import 'package:http/http.dart'as http;
-import '../home/widget/weather/geolocator.dart';
 
 class UserScreen2 extends StatefulWidget {
   @override
@@ -63,13 +63,17 @@ class _UserScreen2State extends State<UserScreen2> {
         actions: [
           IconButton(
             onPressed: () {
-              // 환경설정 아이콘을 눌렀을 때의 동작을 구현합니다.
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EditPage()));
             },
             icon: Icon(Icons.edit),
           ),
           IconButton(
             onPressed: () {
-              // 환경설정 아이콘을 눌렀을 때의 동작을 구현합니다.
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingPage()));
             },
             icon: Icon(Icons.settings),
           ),
@@ -197,7 +201,7 @@ class _UserScreen2State extends State<UserScreen2> {
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
                           Entry latestEntry = snapshot.data;
-                          
+
                           // return Column(
                           //   crossAxisAlignment: CrossAxisAlignment.start,
                           //   mainAxisAlignment: MainAxisAlignment.start,

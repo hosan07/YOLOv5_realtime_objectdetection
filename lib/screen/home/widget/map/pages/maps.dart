@@ -4,10 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:location/location.dart';
-import 'package:objectdetection/screen/home/widget/objectdetection/ui/home_view.dart';
+import 'package:objectdetection/screen/home/widget/objectdetection/yolov5/ui/main_page.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:objectdetection/screen/home/widget/map/model/entry.dart';
-// import 'package:objectdetection/screen/home/widget/map/db/db.dart';
 import '../../diary/diary_screen.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -115,7 +114,8 @@ class _MapPageState extends State<MapPage> {
         body: Stack(children: [
           Stack(
             children: [
-              HomeView(),
+              //HomeView(),
+              Yolov5Page(),
               Container(
                 width: double.infinity,
                 height: 220,
@@ -124,16 +124,6 @@ class _MapPageState extends State<MapPage> {
                     color: Colors.black.withOpacity(0.3), borderRadius: BorderRadius.circular(40)),
                 child: Column(
                   children: [
-                    // Align(
-                    //   alignment: Alignment.topLeft,
-                    //   child: IconButton(
-                    //     onPressed: (){
-                    //       Navigator.pop(context);
-                    //     },
-                    //     icon:Icon(Icons.arrow_back_ios,color: Colors.white,),
-                    //     //replace with our own icon data.
-                    //   ),
-                    // ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

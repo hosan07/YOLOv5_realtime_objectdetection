@@ -2,18 +2,13 @@ import 'dart:convert';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart'as http;
 import 'package:objectdetection/screen/home/widget/map/map_screen.dart';
-import 'package:objectdetection/screen/home/widget/weather/weather_ko.dart';
 import 'package:flutter/material.dart';
 import 'package:objectdetection/screen/home/widget/diary/diary_screen.dart';
-//import 'package:objectdetection/screen/home/widget/map/db/dbhelper.dart';
 import 'package:objectdetection/screen/home/widget/map/model/entry.dart';
 import 'package:objectdetection/screen/home/widget/map/pages/maps.dart';
-import 'package:objectdetection/screen/home/widget/objectdetection/tflite/recognition.dart';
-import 'package:objectdetection/screen/home/widget/objectdetection/tflite/stats.dart';
 import 'package:objectdetection/constants/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:objectdetection/screen/home/widget/weather/geolocator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 class HomeScreen extends StatefulWidget {
@@ -108,11 +103,11 @@ class _HomeScreenState extends State<HomeScreen> {
   // Future<void> _fetchEntries() async{
   //   List<Entry> entries = (await DBHelper.getEntries()).cast<Entry>();
   // }
-  /// Results to draw bounding boxes
-  List<Recognition> results;
-
-  /// Realtime stats
-  Stats stats;
+  // /// Results to draw bounding boxes
+  // List<Recognition> results;
+  //
+  // /// Realtime stats
+  // Stats stats;
 
 
   @override
@@ -385,7 +380,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Gaps.v20,
-                        Text('dd'),
+                        //Text('dd'),
 
                       ],
                     ),

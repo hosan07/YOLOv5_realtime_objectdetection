@@ -15,6 +15,10 @@
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		9993B71229D6C33C00649971 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9993B71129D6C33C00649971 /* GoogleService-Info.plist */; };
+		99E07BF32A249B5B000D8345 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E07BF12A249B39000D8345 /* libc++.tbd */; };
+		99E07BF42A249B62000D8345 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E07BF22A249B4C000D8345 /* libz.tbd */; };
+		99E07BF62A249BB0000D8345 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E07BF52A249BB0000D8345 /* AVFoundation.framework */; };
+		99E07BF82A249BBE000D8345 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E07BF72A249BBE000D8345 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +50,11 @@
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9993B71129D6C33C00649971 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		99E07BF12A249B39000D8345 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		99E07BF22A249B4C000D8345 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		99E07BF52A249BB0000D8345 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		99E07BF72A249BBE000D8345 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		99E07BF92A249BE8000D8345 /* libswiftAVFoundation.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftAVFoundation.tbd; path = usr/lib/swift/libswiftAVFoundation.tbd; sourceTree = SDKROOT; };
 		AB3B5B5B9C7A862FBBA6D65A /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
 		E21BE6EB9A21D27FB5C3473A /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		EECC3DE434F6EA20DBB7B924 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +65,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99E07BF62A249BB0000D8345 /* AVFoundation.framework in Frameworks */,
+				99E07BF32A249B5B000D8345 /* libc++.tbd in Frameworks */,
+				99E07BF42A249B62000D8345 /* libz.tbd in Frameworks */,
 				39C66C7130284B2AA2F48A6A /* Pods_Runner.framework in Frameworks */,
+				99E07BF82A249BBE000D8345 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +79,11 @@
 		1BB65981AC6713364EBF7FEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				99E07BF92A249BE8000D8345 /* libswiftAVFoundation.tbd */,
+				99E07BF72A249BBE000D8345 /* UIKit.framework */,
+				99E07BF52A249BB0000D8345 /* AVFoundation.framework */,
+				99E07BF22A249B4C000D8345 /* libz.tbd */,
+				99E07BF12A249B39000D8345 /* libc++.tbd */,
 				EECC3DE434F6EA20DBB7B924 /* Pods_Runner.framework */,
 			);
 			name = Frameworks;
