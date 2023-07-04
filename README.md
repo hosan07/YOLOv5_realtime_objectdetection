@@ -1,9 +1,15 @@
 [References]
+
 [1] Korea Road Traffic Authority. "Bicycle (Victim) Traffic Accidents," 2017-2021.
+
 [2] Ministry of Health and Welfare. "Status of Disabled Persons," 2021.
+
 [3] Redmon, Joseph, et al. "You Only Look Once: Unified, Real-Time Object Detection." CVPR, 2016.
+
 [4] Blog.roboflow.com. "YOLOv4 Versus YOLOv5," [Online]. Available: https://blog.roboflow.com/yolov4-versus-yolov5/.
+
 [5] Glennjocher. "yolov5." GitHub, 13 Jan. 2022, [Online]. Available: https://github.com/ultralytics/yolov5.
+
 
 [Additional Resources]
 
