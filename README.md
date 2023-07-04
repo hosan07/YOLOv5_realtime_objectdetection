@@ -32,3 +32,6 @@ URL: https://drive.google.com/drive/folders/1NG1lHnV5An_1BaqkGHpaXGw_WNuBd_zo?us
 6. Presentation, Poster, and Academic Paper PDF Materials URL
 URL: https://drive.google.com/drive/folders/1eiTZr9bxS0LNQq8VaVyr_HGigQI-rdSe?usp=sharing
 (Includes Capstone Design Presentation PPT, 2023 Korea Next Generation Computing Society Poster/Academic Paper)
+![IMG_1751 2](https://github.com/hosan07/objectdetection/assets/128561875/a7b68edd-a090-4165-b86c-b8e6545d14f9)
+
+
