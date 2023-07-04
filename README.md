@@ -7,17 +7,22 @@
 
 [Additional Resources]
 
-Flutter Project GitHub URL
+1. Flutter Project GitHub URL
 URL: https://github.com/hosan07/objectdetection
-PlantUML Overall Diagram URL
+
+2. PlantUML Overall Diagram URL
 URL: https://drive.google.com/file/d/1tgxvcBgsFoLOWsqQWySFOjiBuSoap8IP/view?usp=sharing
-Colab Training Code URL
+
+3. Colab Training Code URL
 URL: https://colab.research.google.com/drive/1WeU2oTjbuoJVwH13CaLNzlmDZdcFbXRx?usp=sharing
-Dataset URL
+
+4. Dataset URL
 URL: https://public.roboflow.com/object-detection/vehicles-openimages
-Model Training Results URL
+
+5. Model Training Results URL
 URL: https://drive.google.com/drive/folders/1NG1lHnV5An_1BaqkGHpaXGw_WNuBd_zo?usp=sharing
 (Path: detectProject > yolov5 > runs > train > yolov5n_exp, s_exp, m_exp)
-Presentation, Poster, and Academic Paper PDF Materials URL
+
+6. Presentation, Poster, and Academic Paper PDF Materials URL
 URL: https://drive.google.com/drive/folders/1eiTZr9bxS0LNQq8VaVyr_HGigQI-rdSe?usp=sharing
 (Includes Capstone Design Presentation PPT, 2023 Korea Next Generation Computing Society Poster/Academic Paper)
