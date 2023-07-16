@@ -4,6 +4,7 @@ flutter app of object detection by yolov5
 ## Image
 <img src = "https://github.com/hosan07/YOLOv5_realtime_objectdetection/assets/128561875/78085504-1539-4dd7-b253-f85033d114d4" width="30%" height="30%">
 <img src = "https://github.com/hosan07/YOLOv5_realtime_objectdetection/assets/128561875/ba233876-c3d0-4f24-9121-cfe062d31c57" width="30%" height="30%">
+<img src = "https://github.com/hosan07/YOLOv5_realtime_objectdetection/assets/128561875/c1a4c1dd-8569-4593-871d-f05f51b08d4a" width="30%" height="30%">
 
 
 
