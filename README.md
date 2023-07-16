@@ -8,8 +8,7 @@ flutter app of object detection by yolov5
 
 
 
-## [References]
-
+## References
 [1] Korea Road Traffic Authority. "Bicycle (Victim) Traffic Accidents," 2017-2021.
 
 [2] Ministry of Health and Welfare. "Status of Disabled Persons," 2021.
@@ -21,7 +20,7 @@ flutter app of object detection by yolov5
 [5] Glennjocher. "yolov5." GitHub, 13 Jan. 2022, [Online]. Available: https://github.com/ultralytics/yolov5.
 
 
-## [Additional Resources]
+## Additional Resources
 
 1. Flutter Project GitHub URL
 URL: https://github.com/hosan07/objectdetection
